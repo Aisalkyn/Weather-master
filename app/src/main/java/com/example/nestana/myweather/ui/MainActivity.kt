@@ -28,6 +28,7 @@ import kotlinx.android.synthetic.main.activity_main.*
      }
 
      private fun initPresenter(){
+
          val app = this.applicationContext as StartApplication
          presenter = MainPresenter(app.service, this)
          presenter!!.bind(this)
@@ -36,10 +37,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 
      override fun onWeatherSuccess(model: Weather) {
          city_name.text= model.name
-         temperature_c.text = model.main!!.temp.toString()
+         temperature_c.text = ((model.main!!.temp!! - 273.15).toInt()).toString() + ""
 
      }
 
-     override fun onWeatherFail() {
+     override fun onWeatherFail(message: String) {
      }
 }

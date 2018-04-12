@@ -1,7 +1,6 @@
 package com.example.nestana.myweather.ui
 
 import android.content.Context
-import android.widget.Toast
 import com.example.nestana.myweather.model.Weather
 import com.example.nestana.myweather.other.Constants.Companion.KEY_API
 import com.example.nestana.myweather.other.ForumService
@@ -14,7 +13,7 @@ class MainPresenter(var service: ForumService?,
 
 
     var view: MainContract.View? = null
-    override val isViewAttached: Boolean = view !=null
+    override fun isViewAttached(): Boolean = view != null
     override  fun bind(view: MainContract.View){
         this.view = view
     }
@@ -23,14 +22,19 @@ class MainPresenter(var service: ForumService?,
         this.view = null
     }
     override fun loadWeather() {
-        service!!.getWeather("Bishkek", KEY_API).enqueue(object: Callback<Weather>{
+        service!!.getWeather("Berlin", KEY_API).enqueue(object: Callback<Weather>{
             override fun onResponse(call: Call<Weather>?, response: Response<Weather>?) {
-                view!!.onWeatherSuccess(response!!.body()!!)
+                if (isViewAttached()) {
+                    view!!.onWeatherSuccess(response!!.body()!!)
+                } else {
+                }
+                view!!.onWeatherFail(response!!.message())
             }
 
             override fun onFailure(call: Call<Weather>?, t: Throwable?) {
-                Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
-
+                if (isViewAttached())
+                    view!!.onWeatherFail(t!!.message!!)
+                t!!.printStackTrace()
             }
         })
     }

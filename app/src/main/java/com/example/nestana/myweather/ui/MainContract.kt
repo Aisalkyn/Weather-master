@@ -7,7 +7,7 @@ import com.example.nestana.myweather.other.Lifecycle
 interface MainContract {
     interface View {
         fun onWeatherSuccess(model:Weather )
-        fun onWeatherFail()
+        fun onWeatherFail(message: String)
 
     }
 

@@ -3,4 +3,6 @@
     <string name="weather">Погода</string>
     <string name="city">Город</string>
     <string name="week">Неделя</string>
+    <string name="day">День</string>
+    <string name="night">Ночь</string>
 </resources>

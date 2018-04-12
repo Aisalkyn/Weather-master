@@ -6,9 +6,12 @@ import com.example.nestana.myweather.other.Network
 
 class StartApplication : Application() {
 
-    private val URL = "http://api.openweathermap.org/data/2.5/"
+    private val URL = "http://api.openweathermap.org/"
+    private val URL_WEEK = "http://dataservice.accuweather.com/"
 
     var service: ForumService? = null
+    var serviceWeek: ForumService? = null
+
 
     override fun onCreate() {
         super.onCreate()
@@ -16,6 +19,9 @@ class StartApplication : Application() {
     }
 
      private fun init(){
-         service = Network.Companion.initRetrofit(URL)    }
+         service = Network.Companion.initRetrofit(URL)
+         serviceWeek = Network.Companion.initRetrofit(URL_WEEK)
+
+     }
 
 }
