@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_weather.*
 
 class WeatherDetailedActivtiy : AppCompatActivity(), WeatherDetailedContract.View {
 
-
     private var presenter: WeatherDetailedPresenter? = null
     private var adapter: WeatherDetailedAdapter? = null
 

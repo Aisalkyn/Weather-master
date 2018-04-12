@@ -22,7 +22,7 @@ class MainPresenter(var service: ForumService?,
         this.view = null
     }
     override fun loadWeather() {
-        service!!.getWeather("Berlin", KEY_API).enqueue(object: Callback<Weather>{
+        service!!.getWeather("London", KEY_API).enqueue(object: Callback<Weather>{
             override fun onResponse(call: Call<Weather>?, response: Response<Weather>?) {
                 if (isViewAttached()) {
                     view!!.onWeatherSuccess(response!!.body()!!)

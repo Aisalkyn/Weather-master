@@ -36,9 +36,7 @@ class WeatherDetailedAdapter(var listOfOrders: ArrayList<DailyForecasts>) : Recy
 
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         fun bind(model: DailyForecasts) {
-//            if (!model.img_url.isNullOrEmpty()) {
-//                GlideHelper.loadFlickrThumb(model.img_url, itemView.favourite_img)
-//            }
+
             itemView.titleofWeek.text = model.date
             itemView.high_temp.text = model.temperature!!.max.toString()
             itemView.lowest_temp.text = model.temperature!!.min.toString()
