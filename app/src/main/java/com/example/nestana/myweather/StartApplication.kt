@@ -15,8 +15,7 @@ class StartApplication : Application() {
         init()
     }
 
-    private fun init(){
-        service = Network.initRetrofit(URL)
-    }
+     private fun init(){
+         service = Network.Companion.initRetrofit(URL)    }
 
 }

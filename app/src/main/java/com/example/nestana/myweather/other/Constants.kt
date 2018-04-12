@@ -7,9 +7,9 @@ import kotlin.math.round
  */
 class Constants {
     companion object {
-        val KEY_API = "42f7f5712178a2caf10d529534f260ba"
+        val KEY_API = "1a40b6d9b0f6bf2c9add0e7df10225e4"
 
-        fun covertFromCalvinToCelsium(kelvinNumber: Double): Double? {
+        fun covertFromKelvinToCelsium(kelvinNumber: Double): Double? {
             return round(kelvinNumber - 273.15)
         }
     }
