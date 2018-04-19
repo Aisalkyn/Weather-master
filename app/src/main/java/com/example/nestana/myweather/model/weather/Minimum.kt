@@ -7,6 +7,6 @@ import com.google.gson.annotations.SerializedName
  */
 class Minimum{
     @SerializedName("Value")
-    private var value: Int? = null
+     var value: Int? = null
 
 }

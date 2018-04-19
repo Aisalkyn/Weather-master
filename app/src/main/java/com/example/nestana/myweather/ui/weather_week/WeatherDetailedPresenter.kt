@@ -3,7 +3,6 @@ package com.example.nestana.myweather.ui.weather_week
 import android.content.Context
 import android.widget.Toast
 import com.example.nestana.myweather.model.Weather
-import com.example.nestana.myweather.model.weather.DailyForecasts
 import com.example.nestana.myweather.model.weather.Weatherweek
 import com.example.nestana.myweather.other.Constants.Companion.KEY_API
 import com.example.nestana.myweather.other.Constants.Companion.KEY_API_WEEK
@@ -50,9 +49,8 @@ class WeatherDetailedPresenter(var service: ForumService?, var serviceWeek: Foru
     override fun loadWeatherWeek() {
         serviceWeek!!.getWeatherWeek(KEY_API_WEEK).enqueue(object: Callback<Weatherweek>{
             override fun onResponse(call: Call<Weatherweek>?, response: Response<Weatherweek>?) {
-
                 if (isViewAttached()) {
-                    view!!.onWeatherWeekSuccess(response!!.body())
+                    response!!.body()?.list?.let { view!!.onWeatherWeekSuccess(it) }
                 } else
                     view!!.onWeatherWeekFail(response!!.message()!!)
             }

@@ -19,8 +19,8 @@ class StartApplication : Application() {
     }
 
      private fun init(){
-         service = Network.Companion.initRetrofit(URL)
-         serviceWeek = Network.Companion.initRetrofit(URL_WEEK)
+         service = Network.Companion.initService(URL)
+         serviceWeek = Network.Companion.initService(URL_WEEK)
 
      }
 

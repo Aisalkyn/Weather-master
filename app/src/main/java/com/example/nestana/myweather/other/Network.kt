@@ -1,25 +1,40 @@
 package com.example.nestana.myweather.other
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 
-class  Network {
+class Network {
+
     companion object {
-        fun initRetrofit(URL: String): ForumService {
+        val REQUEST_TIME = 1L
+
+        fun initService(baseURL: String): ForumService {
             return Retrofit.Builder()
-                    .baseUrl(URL)
-                    .addConverterFactory(GsonConverterFactory.create(initGson()))
+                    .baseUrl(baseURL)
+                    .addConverterFactory(initGson())
+                    .client(getClient()).build().create(ForumService::class.java)
+        }
 
+        private fun getClient(): OkHttpClient {
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+
+            return OkHttpClient.Builder()
+                    .addInterceptor(interceptor)
+                    .writeTimeout(REQUEST_TIME, TimeUnit.MINUTES)
+                    .readTimeout(REQUEST_TIME, TimeUnit.MINUTES)
+                    .connectTimeout(REQUEST_TIME, TimeUnit.MINUTES)
                     .build()
-                    .create(ForumService::class.java)
         }
 
-        private fun initGson(): Gson {
-            return GsonBuilder().create()
+        private fun initGson(): GsonConverterFactory {
+            return GsonConverterFactory.create(GsonBuilder().create())
         }
+
     }
 }

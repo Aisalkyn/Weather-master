@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
  */
 class Maximum{
         @SerializedName("Value")
-        private var value: Int? = null
+         var value: Int? = null
 
 
 }
