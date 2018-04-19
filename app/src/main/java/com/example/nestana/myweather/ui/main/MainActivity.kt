@@ -1,4 +1,4 @@
- package com.example.nestana.myweather.ui
+ package com.example.nestana.myweather.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.example.nestana.myweather.R
 import com.example.nestana.myweather.StartApplication
 import com.example.nestana.myweather.model.Weather
+import com.example.nestana.myweather.ui.weather_week.WeatherDetailedActivtiy
 import kotlinx.android.synthetic.main.activity_main.*
 
  class MainActivity : AppCompatActivity(), MainContract.View {

@@ -1,4 +1,4 @@
-package com.example.nestana.myweather.ui
+package com.example.nestana.myweather.ui.main
 
 import android.content.Context
 import com.example.nestana.myweather.model.Weather

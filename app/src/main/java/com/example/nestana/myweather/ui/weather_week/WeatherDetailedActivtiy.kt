@@ -1,8 +1,9 @@
-package com.example.nestana.myweather.ui
+package com.example.nestana.myweather.ui.weather_week
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.widget.Toast
 import com.example.nestana.myweather.R
 import com.example.nestana.myweather.StartApplication
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_weather.*
 
 
 class WeatherDetailedActivtiy : AppCompatActivity(), WeatherDetailedContract.View {
+
 
     private var presenter: WeatherDetailedPresenter? = null
     private var adapter: WeatherDetailedAdapter? = null
@@ -38,7 +40,7 @@ class WeatherDetailedActivtiy : AppCompatActivity(), WeatherDetailedContract.Vie
 
     }
     private fun initRecyclerView() {
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) as RecyclerView.LayoutManager?
         adapter = WeatherDetailedAdapter(ArrayList())
         recyclerView.adapter = adapter
     }
@@ -51,12 +53,12 @@ class WeatherDetailedActivtiy : AppCompatActivity(), WeatherDetailedContract.Vie
         Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
 
     }
-    override fun onWeatherWeekSuccess(list: ArrayList<DailyForecasts>) {
+    override fun onWeatherWeekSuccess(list: List<DailyForecasts>) {
         adapter!!.setList(list)
     }
 
     override fun onWeatherWeekFail(message: String) {
-        Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Hi", Toast.LENGTH_LONG).show()
     }
 
 }

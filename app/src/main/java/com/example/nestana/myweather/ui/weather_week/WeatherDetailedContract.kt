@@ -1,4 +1,4 @@
-package com.example.nestana.myweather.ui
+package com.example.nestana.myweather.ui.weather_week
 
 import com.example.nestana.myweather.model.Weather
 import com.example.nestana.myweather.model.weather.DailyForecasts
@@ -10,7 +10,7 @@ import com.example.nestana.myweather.other.Lifecycle
 interface WeatherDetailedContract {
     interface View {
         fun onWeatherDetailedSuccess(model: Weather)
-        fun onWeatherWeekSuccess(list: ArrayList<DailyForecasts>)
+        fun onWeatherWeekSuccess(list: List<DailyForecasts>)
 
         fun onWeatherDetailedFail(message: String)
         fun onWeatherWeekFail(message: String)
