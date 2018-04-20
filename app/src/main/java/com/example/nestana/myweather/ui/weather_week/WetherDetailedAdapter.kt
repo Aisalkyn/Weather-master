@@ -36,9 +36,11 @@ class WeatherDetailedAdapter(var listOfOrders: List<DailyForecasts> ) : Recycler
 
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         fun bind(model: DailyForecasts) {
+
             itemView.titleofWeek.text = model.date
             itemView.high_temp.text = model.temperature!!.max!!.value.toString()
             itemView.lowest_temp.text = model.temperature!!.min!!.value.toString()
         }
     }
+
 }

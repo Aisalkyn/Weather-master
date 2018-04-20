@@ -45,6 +45,7 @@ class WeatherDetailedActivtiy : AppCompatActivity(), WeatherDetailedContract.Vie
         recyclerView.adapter = adapter
     }
     override fun onWeatherDetailedSuccess(model: Weather) {
+
         temperature_c.text = ((model.main!!.temp!! - 273.15).toInt()).toString() + "°C"
         city_name.text = model.name
     }

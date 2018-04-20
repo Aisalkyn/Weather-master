@@ -5,4 +5,6 @@
     <string name="week">Неделя</string>
     <string name="day">День</string>
     <string name="night">Ночь</string>
+    <string name="location"> Местоположение </string>
+
 </resources>

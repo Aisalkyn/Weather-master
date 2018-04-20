@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:layout_weight="1.4"
     android:orientation="vertical"
+    android:background="@color/lightgrey"
     android:weightSum="1">
 
 

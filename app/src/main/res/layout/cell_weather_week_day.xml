@@ -13,6 +13,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/size_12"
         android:gravity="center"
+        android:textColor="@color/colorWeather"
         android:text="-----"
         android:textSize="16sp" />
 
