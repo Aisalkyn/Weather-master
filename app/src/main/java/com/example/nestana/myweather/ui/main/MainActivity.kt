@@ -12,7 +12,9 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import android.view.View
+import android.widget.SearchView
 import android.widget.Toast
 import com.example.nestana.myweather.R
 import com.example.nestana.myweather.StartApplication
@@ -121,6 +123,25 @@ import kotlinx.android.synthetic.main.activity_main.*
                  locationManager!!.requestLocationUpdates("gps", 5000, 0f, listener)
              }
          })
+     }
+
+     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+         menuInflater.inflate(R.menu.menu_search, menu)
+         val menuItem = menu.findItem(R.id.menuSearch)
+         val searchView = menuItem.actionView as SearchView
+         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+             override fun onQueryTextSubmit(query: String): Boolean {
+                 return false
+             }
+
+             override fun onQueryTextChange(newText: String): Boolean {
+
+                 //adapter.getFilter().filter(newText)
+                 return false
+             }
+         })
+
+         return super.onCreateOptionsMenu(menu)
      }
 
 
