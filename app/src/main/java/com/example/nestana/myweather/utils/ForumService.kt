@@ -1,4 +1,4 @@
-package com.example.nestana.myweather.other
+package com.example.nestana.myweather.utils
 
 import retrofit2.Call
 import retrofit2.http.GET

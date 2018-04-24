@@ -1,4 +1,4 @@
-package com.example.nestana.myweather.other
+package com.example.nestana.myweather.utils
 
 interface Lifecycle<V> {
 

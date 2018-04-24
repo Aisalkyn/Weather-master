@@ -6,5 +6,8 @@
     <string name="day">День</string>
     <string name="night">Ночь</string>
     <string name="location"> Местоположение </string>
+    <string name="channel_name">oreo channel name</string>
+    <string name="channel_description">oreo channer description</string>
+
 
 </resources>

@@ -1,8 +1,8 @@
 package com.example.nestana.myweather
 
 import android.app.Application
-import com.example.nestana.myweather.other.ForumService
-import com.example.nestana.myweather.other.Network
+import com.example.nestana.myweather.utils.ForumService
+import com.example.nestana.myweather.utils.Network
 
 class StartApplication : Application() {
 

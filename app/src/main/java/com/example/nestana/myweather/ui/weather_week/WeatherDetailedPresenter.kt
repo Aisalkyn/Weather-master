@@ -4,9 +4,9 @@ import android.content.Context
 import android.widget.Toast
 import com.example.nestana.myweather.model.Weather
 import com.example.nestana.myweather.model.weather.Weatherweek
-import com.example.nestana.myweather.other.Constants.Companion.KEY_API
-import com.example.nestana.myweather.other.Constants.Companion.KEY_API_WEEK
-import com.example.nestana.myweather.other.ForumService
+import com.example.nestana.myweather.utils.Constants.Companion.KEY_API
+import com.example.nestana.myweather.utils.Constants.Companion.KEY_API_WEEK
+import com.example.nestana.myweather.utils.ForumService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
